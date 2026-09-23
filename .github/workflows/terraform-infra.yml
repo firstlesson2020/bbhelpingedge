@@ -42,6 +42,23 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
+      - name: Import existing AWS resources into state
+        shell: bash
+        run: |
+          set -e
+
+          if aws s3api head-bucket --bucket "bbhelpingedge.org" >/dev/null 2>&1; then
+            echo "Bucket already exists; importing into Terraform state..."
+            terraform import aws_s3_bucket.site "bbhelpingedge.org" || true
+          fi
+
+          zone_id=$(aws route53 list-hosted-zones-by-name --dns-name "bbhelpingedge.org" --max-items 1 --query 'HostedZones[0].Id' --output text 2>/dev/null || true)
+          if [ -n "$zone_id" ] && [ "$zone_id" != "None" ]; then
+            zone_id="${zone_id#/hostedzone/}"
+            echo "Hosted zone already exists; importing into Terraform state..."
+            terraform import aws_route53_zone.primary "$zone_id" || true
+          fi
+
       - name: Terraform Validate
         run: terraform validate
 
