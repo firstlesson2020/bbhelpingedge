@@ -52,6 +52,18 @@ jobs:
             terraform import aws_s3_bucket.site "bbhelpingedge.org" || true
           fi
 
+          oac_id=$(aws cloudfront list-origin-access-controls --query "OriginAccessControlList.Items[?Name=='bbhelpingedge.org-oac'].Id | [0]" --output text 2>/dev/null || true)
+          if [ -n "$oac_id" ] && [ "$oac_id" != "None" ]; then
+            echo "Origin access control already exists; importing into Terraform state..."
+            terraform import aws_cloudfront_origin_access_control.site "$oac_id" || true
+          fi
+
+          distribution_id=$(aws cloudfront list-distributions --query "DistributionList.Items[?Origins.Items[?DomainName=='bbhelpingedge.org.s3.amazonaws.com']].Id | [0]" --output text 2>/dev/null || true)
+          if [ -n "$distribution_id" ] && [ "$distribution_id" != "None" ]; then
+            echo "CloudFront distribution already exists; importing into Terraform state..."
+            terraform import aws_cloudfront_distribution.site "$distribution_id" || true
+          fi
+
           zone_id=$(aws route53 list-hosted-zones-by-name --dns-name "bbhelpingedge.org" --max-items 1 --query 'HostedZones[0].Id' --output text 2>/dev/null || true)
           if [ -n "$zone_id" ] && [ "$zone_id" != "None" ]; then
             zone_id="${zone_id#/hostedzone/}"
