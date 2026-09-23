@@ -3,7 +3,7 @@
 const CONFIG = {
   contactEmail: "YOUR_EMAIL@example.com",
   phone: "YOUR PHONE NUMBER",
-  whatsapp: "YOUR_WHATSAPP_NUMBER_WITH_COUNTRY_CODE"
+  whatsapp: "918374124358"
 };
 
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -47,3 +47,13 @@ sections.forEach(section => observer.observe(section));
 // Optional contact display values.
 if (CONFIG.phone && !CONFIG.phone.includes("YOUR")) document.getElementById("phoneText").innerHTML = CONFIG.phone;
 if (CONFIG.contactEmail && !CONFIG.contactEmail.includes("YOUR_EMAIL")) document.getElementById("emailText").innerHTML = CONFIG.contactEmail;
+
+// WhatsApp chat link.
+const whatsappLink = document.getElementById("whatsappLink");
+if (whatsappLink) {
+  const whatsappNumber = CONFIG.whatsapp?.replace(/\D/g, "") || "";
+  if (whatsappNumber) {
+    const message = encodeURIComponent("Hello BB Helping Edge, I want to know more about your work.");
+    whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${message}`;
+  }
+}
