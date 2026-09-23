@@ -6,7 +6,10 @@ on:
     branches:
       - main
     paths:
-      - 'aws-static-site/site/**'
+      - 'index.html'
+      - 'styles.css'
+      - 'script.js'
+      - 'assets/**'
       - '.github/workflows/deploy-site.yml'
 
 permissions:
@@ -32,7 +35,12 @@ jobs:
 
       - name: Sync site files to S3
         run: |
-          aws s3 sync aws-static-site/site/ s3://${{ vars.S3_BUCKET_NAME }} --delete
+          aws s3 sync . s3://${{ vars.S3_BUCKET_NAME }} \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "aws-static-site/*" \
+            --exclude "README*" \
+            --delete
 
       - name: Invalidate CloudFront cache
         if: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
