@@ -1,165 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="BB Helping Edge is a purpose-driven initiative inspired by Bhagat Singh's values of courage, service, and upliftment."
-    />
-    <title>BB Helping Edge</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="#top" aria-label="BB Helping Edge home">
-          <span class="brand-mark">BB</span>
-          <span class="brand-text">Helping Edge</span>
-        </a>
-        <nav class="main-nav" aria-label="Main navigation">
-          <a href="#mission">Mission</a>
-          <a href="#impact">Impact</a>
-          <a href="#support">Support</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a class="button button-primary nav-cta" href="#support">Donate</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="BB Helping Edge — turning inspiration into meaningful community service through participation and action.">
+  <meta name="theme-color" content="#0d1210">
+  <title>BB Helping Edge | From Inspiration to Action</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">PEOPLE FOR A BETTER TOMORROW <span></span> SERVICE • PARTICIPATION • IMPACT</div>
+
+  <header class="site-header" id="top">
+    <div class="nav-shell">
+      <a class="brand" href="#home" aria-label="BB Helping Edge home">
+        <img src="assets/logo.png" alt="BB Helping Edge logo">
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="nav" id="site-nav">
+        <a class="active" href="#home">Home</a>
+        <a href="#story">Our Story</a>
+        <a href="#work">Our Work</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-donate" href="#donate">Donate Now <b>→</b></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-paper" id="home">
+      <div class="brush brush-saffron"></div><div class="brush brush-green"></div>
+      <div class="hero-copy">
+        <div class="eyebrow">PEOPLE FOR A BETTER TOMORROW <i></i></div>
+        <h1>BB Helping <em>Edge</em></h1>
+        <h2>Carrying his <strong>blood</strong> through our veins,<br>and his ideology through our <strong>services.</strong></h2>
+        <p>Turning inspiration into meaningful action through community, service and participation.</p>
+        <div class="actions"><a class="btn btn-red" href="#donate">Donate Now <span>→</span></a><a class="btn btn-outline" href="#work">Explore Our Work</a></div>
       </div>
-    </header>
+      <div class="hero-portrait">
+        <img src="assets/bhagat-singh.png" alt="Bhagat Singh portrait illustration">
+      </div>
+      <div class="hero-side-note"></div>
+      <div class="hero-bottom-art"><span>INDIA</span><span>•</span><span>UNITY</span><span>•</span><span>SERVICE</span></div>
+    </section>
 
-    <main id="top">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">A cause rooted in courage and compassion</p>
-            <h1>Turn ideals into action for a stronger tomorrow.</h1>
-            <p class="lead">
-              BB Helping Edge channels the spirit of Bhagat Singh into practical support for
-              communities, education, and emergency assistance.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#support">Support the mission</a>
-              <a class="button button-secondary" href="#mission">Learn more</a>
-            </div>
-            <ul class="hero-metrics" aria-label="Key project stats">
-              <li><strong>1200+</strong><span>families supported</span></li>
-              <li><strong>65</strong><span>volunteer teams</span></li>
-              <li><strong>24/7</strong><span>community response</span></li>
-            </ul>
-          </div>
+    <section class="pillars section-paper">
+      <article><div class="pillar-icon">♥</div><div><h3>Serve</h3><p>Supporting people and communities through meaningful initiatives.</p></div></article>
+      <article><div class="pillar-icon people">●●</div><div><h3>Participate</h3><p>Bringing people together to contribute their time, resources and skills.</p></div></article>
+      <article><div class="pillar-icon leaf">◖</div><div><h3>Impact</h3><p>Turning every contribution into an opportunity to make a difference.</p></div></article>
+    </section>
 
-          <div class="hero-visual" aria-label="Bhagat Singh-inspired illustration">
-            <div class="image-card">
-              <img src="assets/bhagat-singh.svg" alt="Illustration inspired by Bhagat Singh" />
-            </div>
-          </div>
-        </div>
-      </section>
+    <section class="story dark-section" id="story">
+      <div class="story-copy">
+        <div class="eyebrow light">OUR STORY</div>
+        <h2>From Inspiration<br>to Action</h2>
+        <p>BB Helping Edge is a community-driven initiative inspired by the ideals of Bhagat Singh — courage, service, responsibility, and the belief that meaningful change begins with action.</p>
+        <p>We aim to turn inspiration into practical support through social service initiatives, encouraging people to participate and contribute to a better tomorrow.</p>
+        <a class="btn btn-red" href="#work">Read Our Story <span>→</span></a>
+      </div>
+      <div class="story-middle"><div class="quote-mark">“</div><blockquote>Small acts,<br>when done together,<br><b>create a stronger<br>tomorrow.</b></blockquote><div class="signature">Bhagat Singh</div></div>
+      <div class="story-side"><span>COURAGE</span><span>SERVICE</span><span>RESPONSIBILITY</span><span>ACTION</span><div class="book">A BRIGHTER<br>INDIA<br>BEGINS WITH<br>PEOPLE LIKE YOU</div></div>
+    </section>
 
-      <section class="mission" id="mission">
-        <div class="container section-heading">
-          <p class="eyebrow">Our mission</p>
-          <h2>Driven by the values that shaped a nation.</h2>
-        </div>
-        <div class="container cards-grid">
-          <article class="info-card">
-            <div class="card-icon">⚡</div>
-            <h3>Purpose</h3>
-            <p>
-              We work to uplift people through immediate aid, education access, and long-term
-              community resilience.
-            </p>
-          </article>
-          <article class="info-card">
-            <div class="card-icon">🤝</div>
-            <h3>Community</h3>
-            <p>
-              Local action is at the center of everything we do, built on solidarity, trust, and
-              accountable service.
-            </p>
-          </article>
-          <article class="info-card">
-            <div class="card-icon">🌱</div>
-            <h3>Legacy</h3>
-            <p>
-              Inspired by sacrifice and conviction, we create a future where courage leads to human
-              dignity and progress.
-            </p>
-          </article>
-        </div>
-      </section>
+    <section class="work section-paper" id="work">
+      <div class="section-heading"><div class="eyebrow">OUR WORK</div><h2>Ideas Inspire. People Act. <em>Communities Change.</em></h2><i></i></div>
+      <div class="work-grid">
+        <article class="work-card warm"><div class="work-icon">♟</div><h3>Community Support</h3><p>Initiatives focused on supporting people and communities in need.</p></article>
+        <article class="work-card blue"><div class="work-icon">◆</div><h3>Essential Item Distribution</h3><p>Providing blankets, clothing and other useful materials to those who need them.</p></article>
+        <article class="work-card green"><div class="work-icon">✣</div><h3>Food &amp; Basic Needs</h3><p>Supporting initiatives that help provide essential food and daily necessities.</p></article>
+        <article class="work-card rose"><div class="work-icon">♥</div><h3>Social Service Initiatives</h3><p>Bringing people together through service, compassion and responsibility.</p></article>
+      </div>
+    </section>
 
-      <section class="impact" id="impact">
-        <div class="container section-heading">
-          <p class="eyebrow">Impact at a glance</p>
-          <h2>Small acts, meaningful change.</h2>
-        </div>
-        <div class="container impact-grid">
-          <div class="impact-panel">
-            <p class="stat-number" data-count="1200">0</p>
-            <p>Families supported with essentials</p>
-          </div>
-          <div class="impact-panel">
-            <p class="stat-number" data-count="480">0</p>
-            <p>Students funded for learning access</p>
-          </div>
-          <div class="impact-panel">
-            <p class="stat-number" data-count="96">0</p>
-            <p>Community outreach programs launched</p>
-          </div>
-        </div>
-      </section>
+    <section class="upcoming section-paper">
+      <div class="upcoming-copy"><div class="eyebrow">UPCOMING INITIATIVE</div><h2>Blanket Distribution</h2><div class="date">▣ &nbsp;27th September</div><p>We are coming together to distribute blankets to people in need and bring a little warmth and comfort to their lives.</p><a class="btn btn-red" href="#donate">Support This Initiative <span>→</span></a></div>
+      <div class="upcoming-art"><div class="warmth">Warmth<br><span>Today</span><br>A Kinder<br>Tomorrow</div><div class="people-illustration"><div class="person one"></div><div class="person two"></div><div class="blanket"></div></div></div>
+      <blockquote>“<br><span>Humanity<br>is the real<br>strength<br>of a nation.</span><small></small></blockquote>
+    </section>
 
-      <section class="support" id="support">
-        <div class="container support-grid">
-          <div class="support-copy">
-            <p class="eyebrow">Support the mission</p>
-            <h2>Your generosity creates immediate impact.</h2>
-            <p>
-              Every contribution helps provide food, medicine, educational support, and emergency aid
-              to those who need it most.
-            </p>
-            <ul class="support-list">
-              <li>Medical and emergency assistance</li>
-              <li>Scholarship and education support</li>
-              <li>Food and shelter programs</li>
-            </ul>
-            <a class="button button-primary" href="mailto:hello@bbhelpingedge.com">Become a donor</a>
-          </div>
+    <section class="journey section-paper" id="journey">
+      <div class="journey-copy"><div class="eyebrow">OUR JOURNEY SO FAR</div><h2>23rd March</h2><h3>Social Service Initiative</h3><p>A day dedicated to remembering Bhagat Singh and turning inspiration into meaningful service.</p><a class="btn btn-outline red-text" href="#gallery">View Full Gallery <span>→</span></a></div>
+      <div class="photo-mosaic" id="gallery">
+        <figure class="large"><img src="assets/event-01.jpg" alt="BB Helping Edge team during the 23rd March initiative"><figcaption>23rd March • Community service</figcaption></figure>
+        <figure><img src="assets/event-02.jpg" alt="Community service group photograph"><figcaption>Team &amp; community</figcaption></figure>
+        <figure><img src="assets/event-03.jpg" alt="BB Helping Edge volunteers with community members"><figcaption>Service together</figcaption></figure>
+        <figure><img src="assets/event-04.jpg" alt="BB Helping Edge event group"><figcaption>People for a better tomorrow</figcaption></figure>
+        <figure><img src="assets/event-05.jpg" alt="BB Helping Edge volunteers outdoors"><figcaption>Participation</figcaption></figure>
+        <figure><img src="assets/event-06.jpg" alt="BB Helping Edge team holding event banner"><figcaption>Inquilab Zindabad</figcaption></figure>
+      </div>
+      <div class="journey-note">PEOPLE<br>FOR A BETTER<br>TOMORROW<i></i></div>
+    </section>
 
-          <div class="donation-card" aria-label="Donation QR code card">
-            <div class="qr-box">
-              <img src="assets/donate-qr-placeholder.svg" alt="Donation QR code placeholder" />
-            </div>
-            <div class="donation-meta">
-              <span>Scan to donate</span>
-              <strong>UPI / Donation Portal</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <section class="donate dark-section" id="donate">
+      <div class="donate-copy"><div class="eyebrow light">SUPPORT OUR CAUSE</div><h2>Give what you can.</h2><p>Every contribution helps turn inspiration into action and supports future community initiatives.</p></div>
+      <div class="qr-card"><div class="qr-placeholder"><img src="assets/donation-qr.svg" alt="Donation QR placeholder"></div><strong>SCAN TO DONATE</strong><small>Replace the placeholder with the official BB Helping Edge donation QR.</small></div>
+      <div class="donate-points"><p>♥ <span>Support our initiatives</span></p><p>♟ <span>Help us reach more people</span></p><p>◖ <span>Be a part of the change</span></p><div class="mini-ink">Inquilab<br>Zindabad</div></div>
+    </section>
 
-    <footer class="site-footer" id="contact">
-      <div class="container footer-wrap">
-        <div>
-          <a class="brand" href="#top">
-            <span class="brand-mark">BB</span>
-            <span class="brand-text">Helping Edge</span>
-          </a>
-          <p>Service rooted in courage. Action guided by compassion.</p>
-        </div>
-        <div class="footer-links">
-          <a href="mailto:hello@bbhelpingedge.com">hello@bbhelpingedge.com</a>
-          <a href="tel:+919876543210">+91 98765 43210</a>
+    <section class="contact section-paper" id="contact">
+      <div class="contact-copy"><div class="eyebrow">CONTACT US</div><h2>Let’s Make a<br>Difference Together</h2><p>Have a question? Want to contribute? Want to collaborate with us?<br>We’d love to hear from you.</p></div>
+      <div class="contact-details"><div class="socials"><b>Follow Us</b><div><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="LinkedIn">in</a></div></div></div>
+      <div class="contact-side-actions">
+        <div class="contact-actions">
+          <p class="whatsapp-intro">Click below to connect with us directly.</p>
+          <a class="whatsapp-btn" href="https://wa.me/919876543210?text=Hello%20BB%20Helping%20Edge%2C%20I%20want%20to%20know%20more%20about%20your%20work." target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp">WhatsApp Us</a>
         </div>
       </div>
-      <div class="container footer-bottom">
-        <span>© <span id="year"></span> BB Helping Edge</span>
-      </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
-  </body>
+  <footer class="footer">
+    <div class="footer-brand"><img src="assets/logo.png" alt="BB Helping Edge"><span></span></div>
+    <div class="footer-links"><a href="#home">Home</a><a href="#story">Our Story</a><a href="#work">Our Work</a><a href="#contact">Contact</a></div>
+    <div class="legal"><a href="#">Privacy Policy</a><span>|</span><a href="#">Terms &amp; Conditions</a><p>© <span id="year"></span> BB Helping Edge. All rights reserved.</p></div>
+    <div class="footer-slogan"></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
 </html>

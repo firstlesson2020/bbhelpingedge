@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BB Helping Edge</title>
+    <meta
+      name="description"
+      content="BB Helping Edge - a community initiative for service, participation and impact."
+    />
+    <style>
+      :root {
+        --bg: #0d1115;
+        --panel: #171f24;
+        --ink: #f3efe8;
+        --muted: #b9b3a9;
+        --brand: #c9313c;
+        --brand-2: #efb866;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--bg), #131d23 100%);
+        color: var(--ink);
+        font-family: Arial, sans-serif;
+      }
+
+      .card {
+        width: min(760px, 90vw);
+        background: rgba(23, 31, 36, 0.88);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 22px;
+        padding: 42px 32px;
+        box-shadow: 0 18px 46px rgba(0,0,0,0.25);
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 16px;
+        color: var(--brand-2);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 0 0 18px;
+        font-size: clamp(32px, 4vw, 58px);
+        line-height: 1.05;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div class="eyebrow">BB Helping Edge</div>
+      <h1>Static site ready for AWS hosting</h1>
+      <p>
+        This folder is meant for deployment to S3 + CloudFront. Update this content and push to GitHub.
+      </p>
+    </main>
+  </body>
+</html>
