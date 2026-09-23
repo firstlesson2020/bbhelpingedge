@@ -71,6 +71,18 @@ jobs:
             terraform import aws_route53_zone.primary "$zone_id" || true
           fi
 
+          existing_record_id=$(aws route53 list-resource-record-sets --hosted-zone-id "${zone_id:-$(aws route53 list-hosted-zones-by-name --dns-name 'bbhelpingedge.org' --max-items 1 --query 'HostedZones[0].Id' --output text 2>/dev/null || true)}" --query "ResourceRecordSets[?Name=='bbhelpingedge.org.' && Type=='A'].Name | [0]" --output text 2>/dev/null || true)
+          if [ -n "$existing_record_id" ] && [ "$existing_record_id" != "None" ]; then
+            echo "A record already exists; importing into Terraform state..."
+            terraform import aws_route53_record.apex "${zone_id:-$(aws route53 list-hosted-zones-by-name --dns-name 'bbhelpingedge.org' --max-items 1 --query 'HostedZones[0].Id' --output text 2>/dev/null || true)}_bbhelpingedge.org_A" || true
+          fi
+
+          existing_aaaa_record_id=$(aws route53 list-resource-record-sets --hosted-zone-id "${zone_id:-$(aws route53 list-hosted-zones-by-name --dns-name 'bbhelpingedge.org' --max-items 1 --query 'HostedZones[0].Id' --output text 2>/dev/null || true)}" --query "ResourceRecordSets[?Name=='bbhelpingedge.org.' && Type=='AAAA'].Name | [0]" --output text 2>/dev/null || true)
+          if [ -n "$existing_aaaa_record_id" ] && [ "$existing_aaaa_record_id" != "None" ]; then
+            echo "AAAA record already exists; importing into Terraform state..."
+            terraform import aws_route53_record.apex_aaaa "${zone_id:-$(aws route53 list-hosted-zones-by-name --dns-name 'bbhelpingedge.org' --max-items 1 --query 'HostedZones[0].Id' --output text 2>/dev/null || true)}_bbhelpingedge.org_AAAA" || true
+          fi
+
       - name: Terraform Validate
         run: terraform validate
 
