@@ -94,13 +94,13 @@ button, input, textarea { font: inherit; }
   height: 64px;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.18)) brightness(1.04) saturate(1.08);
+  filter: drop-shadow(0 0 12px rgba(203, 160, 88, 0.22)) drop-shadow(0 4px 10px rgba(0,0,0,0.18)) brightness(1.04) saturate(1.08);
   transition: transform 0.28s ease, filter 0.28s ease;
 }
 .brand:hover img,
 .footer-brand:hover img {
   transform: scale(1.02);
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.22)) brightness(1.12) saturate(1.12);
+  filter: drop-shadow(0 0 14px rgba(203, 160, 88, 0.26)) drop-shadow(0 6px 14px rgba(0,0,0,0.22)) brightness(1.12) saturate(1.12);
 }
 .nav {
   display: flex;
@@ -279,7 +279,7 @@ button, input, textarea { font: inherit; }
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 18px 20px 0;
+  /* padding: 18px 20px 0; */
   overflow: hidden;
   border-radius: 30px;
   background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(210,154,77,0.06));
@@ -704,12 +704,19 @@ button, input, textarea { font: inherit; }
 }
 
 .donate {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 0.75fr 1fr;
   gap: 55px;
   align-items: center;
   padding: 42px 7%;
-  background: linear-gradient(180deg, #112734 0%, #0d1d26 100%);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(215, 153, 79, 0.15), transparent 28%),
+    radial-gradient(circle at 80% 30%, rgba(63, 120, 95, 0.18), transparent 24%),
+    linear-gradient(180deg, #112734 0%, #0d1d26 100%);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   color: #f1ebdf;
 }
 .donate h2 {
@@ -722,18 +729,14 @@ button, input, textarea { font: inherit; }
   color: rgba(241,235,223,0.74);
 }
 .qr-card {
-  padding: 20px 18px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 22px;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255,255,255,0.03);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   text-align: center;
 }
 .qr-placeholder {
-  width: 170px;
-  height: 170px;
   margin: 0 auto;
-  padding: 8px;
-  background: #fff;
   border-radius: 16px;
   display: grid;
   place-items: center;
@@ -981,7 +984,7 @@ button, input, textarea { font: inherit; }
 }
 
 .story-page-inner h1 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(26px, 3vw, 40px);
   line-height: 1.12;
@@ -1000,10 +1003,10 @@ button, input, textarea { font: inherit; }
 }
 
 .story-page-inner h3 {
-  margin: 20px 0 8px;
+  margin: 20px 0 10px;
   font-size: clamp(17px, 1.8vw, 22px);
   line-height: 1.4;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
   color: var(--ink);
   text-transform: uppercase;
 }
@@ -1021,13 +1024,17 @@ button, input, textarea { font: inherit; }
 }
 
 .story-callout {
-  margin-top: 18px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(17,27,34,0.12);
+  margin-top: 22px;
+  padding: 20px 20px 10px;
+  border: 1px solid rgba(17,27,34,0.08);
+  border-left: 4px solid var(--red);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.24);
+  box-shadow: 0 10px 24px rgba(17,27,34,0.03);
 }
 
 .story-callout h3 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
 .work-page-inner .story-callout,
@@ -1129,6 +1136,7 @@ button, input, textarea { font: inherit; }
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(22px, 2.8vw, 30px);
   line-height: 1.25;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
@@ -1136,7 +1144,7 @@ button, input, textarea { font: inherit; }
 .impact-page-inner h3 {
   font-size: clamp(17px, 1.8vw, 22px);
   line-height: 1.4;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -1146,6 +1154,25 @@ button, input, textarea { font: inherit; }
   font-size: 16px;
   line-height: 1.8;
   color: var(--text);
+}
+
+.work-page-inner .work-entry {
+  position: relative;
+  margin: 18px 0;
+  padding: 18px 18px 14px 20px;
+  border: 1px solid rgba(17,27,34,0.08);
+  border-left: 4px solid var(--red);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.35);
+  box-shadow: 0 10px 22px rgba(17,27,34,0.03);
+}
+
+.work-page-inner .work-entry h3 {
+  margin: 0 0 8px;
+}
+
+.work-page-inner .work-entry p {
+  margin: 0;
 }
 
 .impact-table {
@@ -1190,11 +1217,16 @@ button, input, textarea { font: inherit; }
 
 .work-page-inner .wide-quote,
 .impact-page-inner .wide-quote {
+  position: relative;
+  margin: 28px 0;
+  padding: 18px 20px 18px 24px;
+  border-left: 3px solid var(--red);
   font-size: clamp(24px, 3vw, 34px);
   line-height: 1.25;
   font-family: "Playfair Display", Georgia, serif;
-  margin: 24px 0;
   color: var(--ink);
+  background: linear-gradient(90deg, rgba(182,40,56,0.07), rgba(255,255,255,0.12));
+  border-radius: 0 14px 14px 0;
 }
 
 .work-page-inner .approach-list,
@@ -1211,11 +1243,20 @@ button, input, textarea { font: inherit; }
   color: var(--text);
 }
 
+.work-page-inner .story-callout,
+.impact-page-inner .story-callout {
+  margin-top: 26px;
+  padding: 18px 18px 8px;
+  border: 1px solid rgba(17,27,34,0.08);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.28);
+}
+
 .work-page-inner .flow,
 .impact-page-inner .flow {
   margin-top: 16px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink);
 }

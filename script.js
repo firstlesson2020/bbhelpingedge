@@ -3,7 +3,7 @@
 const CONFIG = {
   contactEmail: "YOUR_EMAIL@example.com",
   phone: "YOUR PHONE NUMBER",
-  whatsapp: "918374124358"
+  whatsapp: "919705813391"
 };
 
 document.getElementById("year").textContent = new Date().getFullYear();
