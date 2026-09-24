@@ -15,8 +15,19 @@ menu?.addEventListener("click", () => {
   menu.setAttribute("aria-expanded", String(open));
 });
 
-document.querySelectorAll('.nav a[href^="#"]').forEach(link => {
-  link.addEventListener("click", () => nav.classList.remove("open"));
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  const href = link.getAttribute("href");
+  if (!href || href === "#") return;
+
+  link.addEventListener("click", event => {
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.replaceState(null, "", href);
+    nav?.classList.remove("open");
+  });
 });
 
 const form = document.getElementById("contactForm");
@@ -45,8 +56,11 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => observer.observe(section));
 
 // Optional contact display values.
-if (CONFIG.phone && !CONFIG.phone.includes("YOUR")) document.getElementById("phoneText").innerHTML = CONFIG.phone;
-if (CONFIG.contactEmail && !CONFIG.contactEmail.includes("YOUR_EMAIL")) document.getElementById("emailText").innerHTML = CONFIG.contactEmail;
+const phoneText = document.getElementById("phoneText");
+if (phoneText && CONFIG.phone && !CONFIG.phone.includes("YOUR")) phoneText.innerHTML = CONFIG.phone;
+
+const emailText = document.getElementById("emailText");
+if (emailText && CONFIG.contactEmail && !CONFIG.contactEmail.includes("YOUR_EMAIL")) emailText.innerHTML = CONFIG.contactEmail;
 
 // WhatsApp chat link.
 const whatsappLink = document.getElementById("whatsappLink");
