@@ -1,7 +1,7 @@
 // BB Helping Edge — small static-site configuration.
 // Update these values before publishing.
 const CONFIG = {
-  contactEmail: "YOUR_EMAIL@example.com",
+  contactEmail: "contact@bbhelpingedge.com",
   phone: "YOUR PHONE NUMBER",
   whatsapp: "919705813391"
 };
